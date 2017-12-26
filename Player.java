@@ -1,25 +1,36 @@
 public class Player {
-    private int play = 0;
-    private int win = 0;
-    private int lose = 0;
-    private int draw = 0;
-    private int number = -1;
-    private String name;
+    private int game;
+    private int play;
+    private int win;
+    private int lose;
+    private int draw;
+    private int number;
+    private String name = new String();
 
-    public void init(String _name){
-        this.name = _name;
+    public Player(){
+        game = 5;
+        play = 0;
+        win = 0;
+        lose = 0;
+        draw = 0;
+        number = -1;
+        name = new String ("merryman");
     }
+
+    public void setName(String _name){ name = _name; }
 
     public void insert(int _number){
-        this.number = _number;
+        number = _number;
     }
 
+    public int returnPlay() { return play; }
+
     public int returnNumber(){
-        return this.number;
+        return number;
     }
 
     public String returnName(){
-        return this.name;
+        return name;
     }
 
     public void play(int _number){
@@ -33,9 +44,9 @@ public class Player {
     }
 
     public void overall(){
-        System.out.println("You played " +  this.play + " games!");
-        System.out.println(this.win + " Wins");
-        System.out.println(this.draw + " Draws");
-        System.out.println(this.lose + " Loses");
+        System.out.println("You played " +  play + " games!");
+        System.out.println(win + " Wins");
+        System.out.println(draw + " Draws");
+        System.out.println(lose + " Loses");
     }
 }

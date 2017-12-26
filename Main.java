@@ -6,15 +6,15 @@ public class Main {
         Player computer = new Player();
         Player human = new Player();
 
-        computer.init("computer");
-        human.init("human");
+        computer.setName("computer");
+        human.setName("human");
 
         Menu.print();
 
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter the number : ");
 
-        while(true){
+        while(human.returnPlay() != 5){
             if(human.returnNumber() != -1)
                 System.out.print("Enter the number : ");
             human.insert(scan.nextInt());
@@ -27,7 +27,7 @@ public class Main {
                 System.out.println("========== ======= ==========");
             }
         }
-
-
+        System.out.print("The game is end!!");
+        human.overall();
     }
 }
